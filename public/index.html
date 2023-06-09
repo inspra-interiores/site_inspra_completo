@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>site inspra</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./orcamento/orcamento.css">
+  <link rel="stylesheet" href="./contato/contato.css">
+  <link rel="stylesheet" href="./carrossel/carrossel.html">
+  <link rel="stylesheet" href="./cadastro/login.css">
+</head>
+
+<body>
+
+  <div class="navbar" id="inicio">
+    <img class="logoinspra" src="./img/Logo.png">
+    <ul class="atalhos">
+      <li> <a href="#inicio">INICIO</a></li>
+      <li> <a class="atlsobre" href="#sobrenos">SOBRE NÓS</a></li>
+      <li><a href="#projetos">PROJETOS</a></li>
+      <li><a href="#servicos">SERVIÇOS</a></li>
+      <li><a href="#card_orcamento">ORÇAMENTO</a></li>
+      <li><a href="#container">CONTATO</a></li>
+      <span> <a href="login.html"><img class="login" src="./img/logo.login.png"></a></span>
+    </ul>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-slides">
+      <img src="./img/img1.png">
+      <img src="./img/img2.png">
+      <img src="./img/carrossel3.png">
+    </div>
+  </div>
+
+  <div class="box-sobre" id="sobrenos">
+    <img src="./img/imagem jessica.jpeg" class="jessica">
+    <span class="titulosobre">sobre nós</span>
+    <span class="texto">No comando do escritório inspra, a design de interiores jéssica<br> barreiros, coordena uma
+      equipe de profissionais que busca<br> constantemente o mais atual do mercado para melhor<br> desenvolver seus
+      projetos, buscando sempre entregar projetos<br> modernos e funcionais.<br><br>
+      ​
+      Com projetos arrojados e voltados em transmitir a personalidade<br> do cliente, a inspra se prende a um único
+      estilo: o estilo do cliente,<br> criando projetos funcionais e com estilo.<br><br>
+
+      A inspra atua no mercado desde 2020, a maior parte dos projetos é<br> produzido no estado de São Paulo mas
+      desenvolve desings para todo o Brasil.</span>
+  </div>
+
+<div id="projeto-bloco">
+  <h1 id="projetos">projetos</h1>
+  <div id="img_sala">
+    <img id="imgp" src="./img/sala1.png" alt="">
+    <img id="imgp" src="./img/sala2.png" alt="">
+    <img id="imgp" src="./img/sala3.png" alt="">
+  </div>
+  <a id="vjsala" href="./cadastro.html">veja mais salas</a>
+
+  <div id="img_quarto">
+    <img id="imgp" src="./img/quarto1.png" alt="">
+    <img id="imgp" src="./img/quarto2.png" alt="">
+    <img id="imgp" src="./img/quarto3.png" alt="">
+  </div>
+  <a id="vjquarto" href="./cadastro.html">veja mais quartos</a>
+</div>
+  <div id="servicos">
+
+    <div id="servicos">
+      <div id="titulo_servicos">serviços</div>
+      <div class="todos">
+        <div id="primeira-serv">
+      <div id="img1s">
+        <img src="./img/1imgs.png" alt="">
+        <div id="1t">Assessoria para<br>
+          desenvolvimento de <br>
+          layout e decoração</div>
+      </div>
+
+      <div id="img2s">
+        <img src="./img/2imgs.png" alt="">
+        <div id="2t">Concepção de projetos de <br>
+          arquitetura de interiores</div>
+      </div>
+
+      <div id="img3s">
+        <img src="./img/3imgs.png" alt="">
+        <div id="3t">Composição de custos para <br>
+          estimar o valor da obra</div>
+      </div>
+
+      <div id="img4s">
+        <img src="./img/4imgs.png" alt="">
+        <div id="4t">Assessoria presencial <br>
+          para compra de materiais, <br>
+          móveis etc.</div>
+      </div>
+    </div>
+
+    <div id="segunda-serv">
+      <div id="img5s">
+        <img src="./img/5imgs.png" alt="">
+        <div id="5t">Indicação de parceiros <br>
+          para execução da obra</div>
+      </div>
+
+      <div id="img6s">
+        <img src="./img/6imgs.png" alt="">
+        <div id="6t">Acompanhamento <br>
+          de obras</div>
+      </div>
+
+      <div id="img7s">
+        <img src="./img/7imgs.png" alt="">
+        <div id="t7">Produção
+          de ambientes</div>
+      </div>
+
+      <div id="img8s">
+        <img src="./img/8imgs.png" alt="">
+        <div id="t8">Atendimento personalizado</div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="card" id="card_orcamento">
+      <!-- titulo -->
+      <span class="title">ORÇAMENTO</span>
+      <!--  input nome -->
+      <div class="div1">
+        <div> <span class="nome">NOME</span> <input placeholder="nome" class="input_nome" maxlength="40"
+            id="input_nome_orcar"></div>
+        <!-- input telefone -->
+        <div> <span>TELEFONE</span> <input placeholder="somente numeros"  class="telefone" id="input_telefone"
+            type="text" maxlength="11"></div>
+        <!-- input email -->
+        <div><span> EMAIL</span><input maxlength="45" placeholder="digite seu email" id="input_email"></div>
+      </div>
+
+      <div class="div2">
+        <!-- input metros -->
+        <div class="metros"><span> M² APROXIMADO</span> <input placeholder="digite apenas numeros" class="input_metro"
+            id="input_metro"></div>
+        <!-- select tipo do imovel -->
+        <div class="imovel"><span class="tipoimovel">TIPO DO IMÓVEL</span><select class="seletor" name="tipoimovel"
+            id="tipoimovel">
+            <option aria-placeholder="clique para selecionar" class="opt" value="nulo"> CLIQUE PARA SELECIONAR
+            </option>
+            <option class="opt" value="residencial">RESIDENCIAL</option>
+            <OPtion class="opt" value="comercial">COMERCIAL</OPtion>
+          </select></div>
+      </div>
+
+      <div class="div3">
+        <!-- input descricao -->
+        <div><span>CONTE-NOS UM POUCO OQUE DESEJA</span> <input placeholder="descrição" class="oqdeseja"
+            id="input_descricao"></div>
+        <!-- input data de inicio -->
+        <div><span>QUANDO DESEJA COMECAR O PROJETO</span><input class="datainicio" type="date" maxlength="8"
+            id="input_data"></div>
+      </div>
+      <button class="btsimular" onclick="simular()"><span class="simular">SIMULAR</span></button>
+
+
+    </div>
+    <div>
+      <div class="divmensagem" id="div_mensagem">
+        <h1 id="titulodiv_mensagem">ORÇAMENTO</h1>
+        <div id="div_texto"></div><br><br><br><br><br>
+        <div id="div_veja_mais">veja os projetos da inspra</div><br>
+        <div id="div_img">
+          <div>
+            <img id="img_div1" src="./img/sala1.png" alt=""><br> sala
+          </div>
+
+          <div>
+            <img id="img_div2" src="./img/cozinha12.png" alt=""><br>cozinha
+          </div>
+
+          <div>
+            <img id="img_div3" src="./img/quarto11.png" alt=""><br>quarto
+          </div>
+
+          <div>
+            <img id="img_div4" src="./img/banheiro4.png" alt=""><br>banheiro/ <br>lavabo
+          </div>
+
+          <div>
+            <img id="img_div5" src="./img/escritorio3.png" alt=""><br>escritório
+          </div>
+
+          <div>
+            <img id="img_div6" src="./img/areaServico12.png" alt=""><br>area de <br>serviço
+          </div>
+
+          <div>
+            <img id="img_div7" src="./img/areaExtena2.png" alt=""><br>area externa
+          </div>
+
+          <div>
+            <img id="img_div8" src="./img/entrada10.png" alt=""><br>entrada <br><br><br>
+          </div>
+        </div>
+        <div id="div_btn">
+          <a href="cadastro.html">cadastro</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div>
+
+    <main id="container_contato">
+      <form id="login_form_contato">
+        <div id="form_header">
+          <h1>contato</h1>
+
+          <span class="textcontato">se você tiver alguma dúvida, reclamação elogio ou sugestão <br> entre em contato com
+            a inspra para uma melhor esperiência,<br> onde sempre visamos o conforto e bem estar dos nossos clientes<br>
+            em caso de email respondemos em no maximo 24h.
+          </span>
+
+        </div>
+
+        <div id="tudo">
+          <div id="inputs">
+
+            <div class="input-box">
+              <label for="nome">
+                nome
+                <div class="input-field">
+                  <input type="text" id="input_nome" name="nome" placeholder="digite seu nome">
+                </div>
+              </label>
+            </div>
+
+            <div class="input-box">
+              <label for="sobrenome">
+                email
+                <div class="input-field">
+                  <input type="text" id="input_email" name="nome" placeholder="digite seu nome">
+                </div>
+              </label>
+            </div>
+
+            <div class="input-box">
+              <label for="email">
+                assunto
+                <div class="input-field">
+                  <input type="text" id="input_assunto" name="nome">
+                </div>
+              </label>
+
+            </div>
+          </div>
+          <div>
+            <label for="mensagem" class="textmensagem">
+              mensagem
+              <div class="input-mensagem">
+                <input class="mensagem" type="text" id="input_mensagem" name="mensagem">
+              </div>
+            </label>
+          </div>
+
+
+          <button onclick="cadastrar()" type="submit" id="login_button">enviar</button>
+        </div>
+
+        <span class="email">email</span>
+        <span class="email2">inspra@gmail.com</span>
+        <span class="tel">telefone</span>
+        <span class="tel2">++55(11)97896-1234</span>
+  </div>
+
+
+  <div id="line"> </div>
+
+  <div id="footer">
+    <img id="logofooter" src="./img/Logo.png" alt="">
+    <div id="direitos">© 2023 todos os direitos são reservados</div>
+    <div id="f"><img id="f1" src="./img/instagram.png" alt="">
+      <img id="f2" src="./img/linkedin.png" alt="">
+      <img id="f3" src="./img/pinterest.png" alt="">
+    </div>
+
+   
+</body>
+
+</html>
+<script>
+ 
+
+  function simular() {
+    var nome = input_nome_orcar.value
+    var telefone = Number(input_telefone.value)
+    var email = input_email.value
+    var metros = Number(input_metro.value)
+    var descricao = input_descricao.value
+    var data = input_data.value
+    var orcamento_residencial = metros * 20
+    var orcamento_comercial = metros * 40
+    var imovel = tipoimovel.value
+    div_texto.innerHTML = ""
+    card_orcamento.style.display = "none"
+    div_mensagem.style.display = "inline"
+
+    if (imovel == "comercial" && metros >= 2000) {
+      var desconto = metros * 40 * 0.1
+      orcamento_comercial_desconto = orcamento_comercial - desconto
+      div_texto.innerHTML = `<p id="if_div">${nome} o valor do seu orcamento inspra com um projeto no seu estilo é de :R$${orcamento_comercial_desconto} com um desconto de 10%.</p>`
+    } else if (imovel == "comercial") {
+      div_texto.innerHTML = `<p id="if_div">${nome} o valor do seu orcamento inspra com um projeto no seu estilo é de :R$${orcamento_comercial}.</p>`
+    } else if (imovel == "residencial") {
+      div_texto.innerHTML = `<p id="if_div">${nome} o valor do seu orcamento inspra com um projeto no seu estilo é de :R$${orcamento_residencial}.`
+    }
+
+
+    fetch("/usuarios/orcar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nomeServer: nomeVar,
+                    sobrenomeServer: sobrenomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    const Toast = Swal.mixin({
+                                toast: true,
+                                position: 'bottom-start',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                }
+                            })
+
+                            Toast.fire({
+                                icon: 'success',
+                                title: `Cadastro realizado com sucesso! Redirecionando para tela de Login...`
+                            })
+                    
+                    window.location = 'login.html'
+                   
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+    }
+    
+  }
+
+
+
+  var iconLink = document.querySelector('link[rel="icon"]') || document.createElement('link');
+  iconLink.type = 'image/x-icon';
+  iconLink.rel = 'icon';
+  iconLink.href = './img/icone.png';
+
+  document.head.appendChild(iconLink);
+
+  function cadastrar() {
+    var nome = input_nome.value
+    var email = input_email.value
+    var assunto = input_assunto.value
+    var mensagem = input_mensagem.value
+
+    if (nome == "" || email == "" || assunto == "" || mensagem == "") {
+      Swal.fire({
+                icon: 'error',
+                title: 'ERRO',
+                text: 'algum campo não foi preenchido',
+                width: '354px',
+                height: '333px',
+                confirmButtonColor:'#47759F'
+            });
+    } else {
+      Swal.fire({
+                icon: 'success',
+                title: 'SUCESSO',
+                text: 'sua mensagem foi enviada.',
+                width: '354px',
+                height: '333px',
+                confirmButtonColor:'#47759F'
+            });
+
+    }
+  }
+</script>

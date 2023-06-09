@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&family=Comfortaa:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#voltar {
+    width: 50px;
+    margin-top: 111px;
+    position: absolute;
+    left: 30px;
+}
+
+
+body {
+    overflow-x: hidden;
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+    margin: 0%;
+    margin-top: 0%;
+    display: flex;
+    height: 85px;
+    width: 1920px;
+    position: absolute;
+    background: #47759F;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    position: fixed;
+    z-index: 9999; 
+  }
+  
+  .logoinspra {
+    position: absolute;
+    width: 420px;
+    height: 72px;
+    left: 23px;
+    top: 6px;
+  }
+  
+  .designs{
+    position: absolute;
+    width: 68px;
+    height: 71px;
+    left: 1076px;
+    top: 8px;
+  }
+
+  .game{
+    position: absolute;
+    width: 73px;
+    height: 74px;
+    left: 1167px;
+    top: 4px;
+  }
+
+  #titulo{
+    font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'Comfortaa', cursive;
+  font-size: 55px;
+  margin-top: 112px;
+    position: absolute;
+    left: 539px;
+    
+  }
+
+  #icones img{
+    width: 115px ;
+}
+
+#footer{
+    position: absolute;
+    width: 1390px;
+    height: 95px;
+    left: -103px;
+    background: #47759F;
+    margin-top: 2179px;
+
+  }
+  
+  #logofooter{
+    position: absolute;
+    left: 156px;
+    width: 233px;
+    margin-top: 31px;
+  }
+  
+  #direitos{
+    font-size: 20px;
+    margin-top: 36px;
+    position: absolute;
+    left: 601px;
+  }
+  
+  #f{
+    display: flex;
+    position: absolute;
+    margin-top: 28px;
+    left: 1165px;
+    gap: 14px;
+  }
+  
+  #f1{
+    width: 35px;
+  }
+  
+  #f2{
+    width: 35px;
+  }
+  
+  #f3{
+    width: 35px;
+  }
+
+  #cozinha img{
+    width: 333px;
+    height: 386px;
+  
+}
+
+#primeira{
+  height: 450px;
+  display: flex;
+  width: inherit;
+  margin-bottom: 20px;
+  gap: 40px;
+  margin-top: 239px;
+  position: absolute;
+  left: 95px;
+}
+
+#segunda{
+  height: 450px;
+  display: flex;
+  width: inherit;
+  margin-bottom: 20px;
+  gap: 40px;
+  margin-top: 721px;
+  position: absolute;
+  left: 95px;
+}
+
+#terceira{
+  height: 450px;
+  display: flex;
+  width: inherit;
+  margin-bottom: 20px;
+  gap: 40px;
+  margin-top: 1220px;
+  position: absolute;
+  left: 95px;
+}
+
+#quarta{
+  height: 450px;
+  display: flex;
+  width: inherit;
+  margin-bottom: 20px;
+  gap: 40px;
+  margin-top: 1716px;
+  position: absolute;
+  left: 95px;
+}

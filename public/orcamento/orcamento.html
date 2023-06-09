@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="orcamento.css">
+
+</head>
+
+<body>
+    <div class="card" id="card_orcamento">
+        <!-- titulo -->
+        <span class="title">ORÇAMENTO</span>
+        <!--  input nome -->
+        <div class="div1">
+            <div> <span class="nome">NOME</span> <input placeholder="nome" class="input_nome" maxlength="40"
+                    id="input_nome"></div>
+            <!-- input telefone -->
+            <div> <span>TELEFONE</span> <input placeholder="somente numeros" class="telefone" id="input_telefone" type="number"
+                    maxlength="11 required=" ></div>
+            <!-- input email -->
+            <div><span> EMAIL</span><input maxlength="45" id="input_email"></div>
+        </div>
+
+        <div class="div2">
+            <!-- input metros -->
+            <div class="metros"><span> M² APROXIMADO</span> <input placeholder="digite apenas numeros"
+                    class="input_metro" id="input_metro"></div>
+            <!-- select tipo do imovel -->
+            <div class="imovel"><span class="tipoimovel">TIPO DO IMÓVEL</span><select class="seletor" name="tipoimovel"
+                    id="tipoimovel">
+                    <option aria-placeholder="clique para selecionar" class="opt" value="nulo"> CLIQUE PARA SELECIONAR
+                    </option>
+                    <option class="opt" value="residencial">RESIDENCIAL</option>
+                    <OPtion class="opt" value="comercial">COMERCIAL</OPtion>
+                </select></div>
+        </div>
+
+        <div class="div3">
+            <!-- input descricao -->
+            <div><span>CONTE-NOS UM POUCO OQUE DESEJA</span> <input class="oqdeseja" id="input_descricao"></div>
+            <!-- input data de inicio -->
+            <div><span>QUANDO DESEJA COMECAR O PROJETO</span><input class="datainicio" type="date" maxlength="8"
+                    id="input_data"></div>
+        </div>
+        <button class="btsimular"  onclick="simular()"><span class="simular">SIMULAR</span></button>
+
+
+    </div>
+    <div id="card_mensagem">
+        <div class="divmensagem" id="div_mensagem">
+<!-- <img id="entrada" src="https://s3-alpha-sig.figma.com/img/da2c/a950/e1a5be2eee753c10b3c5bd3c7c70e8c9?Expires=1684108800&Signature=N7Akm6U-DmjAwc0uDZOcrb~D23f0d0123XWJMrHWrEMfq7xRGFKFCdpE~O-Mk5E2BFXpoJw-kEkyHFj1GVgCNUAPMwZyu7oWnnYd5aGtfCPohMyxe30bwx0oLUZlL6YjuSbqf2irA5yKsxIk6ZwJP3D7~IFlImRNYYKB1L3CzdcMt8oQk2D6185SwZwU8iMez3Yzhq4~iMYMZKkbC8c8w49j3DcBDFOmPsRnKN3Ne5hZzn0Tk9MkEm6yu6otKTRasYNcj1DVp2bXVeADGyYC33XNOrFcRXtv8kz7z4IMouS604stacC8uNIFgHBC3FHh4xWjnM2wvXqo9fM3cl8unA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+<img id="sala" src="https://s3-alpha-sig.figma.com/img/3891/1d0f/0e7ba2e1b99786565b6ba9385a448a5a?Expires=1684108800&Signature=qqUl4DT0KanUc5me31YWZdqM~HbKhqLrxNc1SeSUEZJyUVCzggPjBKGdR9ps-jNOAGrOLbGmV7~9BpccsE3kc2OsjcNHUAULKGT3qCF73ecn~DiLqbUB-R9DVvZ0hiQAKAMytb3VNA6W1TOcHS6XdVfZaLIswGMVZZxZG-zjEYLsLqS-AsSdtzw9zJOZVY-mCKYFn1KxgK-njmxwtEaVAEN5RKerU5v7PnINCDcTqQuSe62nOaNQPInIS60VSWNTg9cgB422ZS3Jc8ayFpVrHHkU244NSG2eJGaf5JFLKoY9fUyR19qvt2Z0kZNngeKPgGAQ74vYjGWfo0ZlqQGIhA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+<img  id="cozinha" src="https://s3-alpha-sig.figma.com/img/a9d2/f6ac/d7105bb3d4948848a8e3b756f8b22855?Expires=1684108800&Signature=Nm3yiAWvrBI9Q~MyW1smNDYfcLTNUdFnt3kzaCC1~NoEAfvJ6Fva-qt5cwT-6BVQjGQLKtbqg4eT2HxzfrnRq52GKuOLg9Om1eTp~4~DnvPD3Bbcl7FfTo61NsRX-1BL7sfBbh61TfEHRtoHyeYornxhw6oc70UiV57pp3SdjqggnU5yKBxcnavEPCLYbubNlvNMKwDNp9TBgg9A1M9Fi3Q3AFru62Yqy9xkD2e61jOHT9cvY3C3S1r8sDdbAjoz-Jk97Nu8HqtopjbgZfmXCbvmb7PiIaEcQYmiqUTT~yHk82RmMDJyp1ComZomfggwGjljS4aFthhigLnK3qhJ6Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+<img  id="quarto" src="https://s3-alpha-sig.figma.com/img/0222/9dc4/fb8e5fb4347deaa21fb7fd7186cb5671?Expires=1684108800&Signature=Xk3KJczFuRogd3jO1TpPHK8hRMvETZTtqkhQ1-jBn8jx4P0x-EjTl7UTgyAiCy5ms7RURGLHWLFEXMJ4e9QjjntaCispESyPMTsBn40uZq5~xqax4I5pm7BBd14lXU8GYZ6VMGYsN71N648NXR~rvoLEZwWUmvjH6z70IYCnQVab33q9CX6E2uEILFCcayixRQ0L8eAMq7zpgI9bXeHqAGwnQmyzow22KOB~DAdTA-H-J1eXH0iwrio5~qCnSmjhEiBznHvlcMcrjOwiyKH8a7OqHFGyiIPn~hx-JUdakJ47t3hExNN9kyjnKaJA~dFq2znalU-~GKMnLuPBIZX1WQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+<img id="banheiro" src="https://s3-alpha-sig.figma.com/img/c564/5b28/ddb0253213f73f7358a6c5eed205f6ec?Expires=1684108800&Signature=QvOuIYMW~0mFLMcPas6S6QMV3WP0~ILfWVWen11s~ohgrqb1ZGfziqEz2EOtNzK9pgg~AxwZR2~y0EaM5EjQJkRHGHkJ4FIYchdz59rybbJLyTJggB0muoQUI7dDR~CGnYKCnW7mvSHnfAfGKn3qIoYkeGSBZMosTWDnbmATmMOXQwc54~yEHrog-V0pOIO7qifVkE1BsqtCWElk2fDCKP3GbCBNfaVjJ3UDwTxrGypZl5nvHXHUXJEoZvlGckDmj4ecnKEnVa5II9LMHuJSEf9j5CpotPO4KJJ2meAtPcGENXpSgWS~VGZ3T6s99r3UikwM4uUgxtJHpvZJLLYWiA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+<img  id="escritorio" src="https://s3-alpha-sig.figma.com/img/84cf/8953/419892fbd1ef771bd3da690092562cd4?Expires=1684108800&Signature=nENXGOt15OHecOTPB-uR5l8M2aDokhK74qy-IAMy8CX0P7LXWXmydDY-mLhKNNmT3nPNEvywHSkEoR-QZME-jH2j1Urgg-CGyifdRnoM7fafBixAgv5BY6pYmasja~zvLeqBxsW~aCR0Ivz6yJkM8aHKaTNKnJse4MiII-T~ro8tpS4fayqxdE~VejseHZiLerJA2UVR5Fqx62WLhDJr2MgM2eBAdoMvTpRrFAZEek4vA8Qyui-NbSkaTdVwedp013KFMiqcessxuP4gYDuiOBoeSxQVPzj9ak29th9TbUSm3WHJFUKZCbZcc~4QmXny3JImV-8wb-C8nKuZqdw0Fw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+<img id="area_trabalho" src="https://s3-alpha-sig.figma.com/img/945f/e5ac/df116b942303a2bf4ce0478fe3727708?Expires=1684108800&Signature=c5Oed3DMvV3JdNTqGyUZ1YO-Rlxkf9afCX6aKLQA2zfrVW2nrB46mzEXcYl0~G0hiPckK98dc7-wt-i72csyRntD04D2501fcdcbpNAFbD6VlbwMYbLwQY3gRAt3ch3FokVZsi7RIiF72bbTbeGADdBjj1ff4~OnB9w7hL2nA7IZeajdmf70seFFQVdxZKwjAuM5fIOqkRxhoTaLd7nOmFaHJeGq4LBn3Fv3PaIJbPYd1aF6C2KnwZDvZJNlsOb2ExAQPlYDFRdgYViHtI0CtpctIsBTXUVs9~3TiUi6wsQveyMjLjwuBOAmUOYW1gZJxKyOleesSl5Wgs2rJLz6AA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+<img id="externa" src="https://s3-alpha-sig.figma.com/img/e82f/8cb0/71220555dbf68b0d6a459c8f95493dd1?Expires=1684108800&Signature=MIZD849sEzyt2OBHGIyDQS5VWWTxvkIKTmdxpVXeBHHPQLOtyf2QfIzbejJzDBgXC4bntl4C9dGkP8Q-UHe4qev1aIpFEbcwKOoZAD-PpWqE9jXXIUb9HyFGNhY~5wvgw7wjctPCcdF9WzclG27kmWvuHB4Ak2byIFKGdtI3Y~IdGfeQ56nQu~DdpY0Iwx5Vk7qjV~Jma~3d6E2TDaWEFtWLZb6904vTKq4Lc0G8LU7mX47DdfSnC8v9k3DQdh0I1hURVGGoWdjLn0M4yzTGJ0JwAsnMCTMYSI5pxsEWaCpuKc4qCF7ARvGFgXV5qglS1IgUJAySyAOwa6eKj9q0uA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt=""> -->
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
+<script>
+    function Telefone(valueTel) {
+    const formatado = Mascara(valueTel, '(##) #####-####');
+    document.getElementById('tel').value = formatado;
+}
+    // function formatarTelefone() {
+        // const formato = {
+
+            // phone(value) {
+
+                // return value
+
+                    // .replace(/\D/g, '')
+
+                    // .replace(/(\d{2})(\d)/, '($1)$2')
+
+                    // .replace(/(\d{4})(\d)/, '$1-$2')
+
+                    // .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+
+                    // .replace(/(-\d{4})\d+?$/, '$1')
+
+            // }
+
+        // }
+
+
+        // document.querySelectorAll('input').forEach(($input) => {
+
+            // const field = $input.dataset.js
+
+            // $input.addEventListener('input', (e) => {
+
+                // e.target.value = formato[field](e.target.value)
+
+            // }, false)
+
+        // })
+
+
+    // }
+
+
+
+    function simular() {
+        var nome = input_nome.value
+        var telefone = Number(input_telefone.value)
+        var email = input_email.value
+        var metros = Number(input_metro.value)
+        var descricao = input_descricao.value
+        var data = input_data.value
+        var orcamento_residencial = metros * 20
+        var orcamento_comercial = metros * 40
+        var imovel = tipoimovel.value
+        div_mensagem.innerHTML = ""
+        card_orcamento.style.display="none"
+
+if (imovel == "resdencial" && metros >= 1000) {
+    orcamento_comercial * 0.1
+}
+
+        if (imovel == "comercial") {
+            div_mensagem.innerHTML += `${nome} o valor do seu orcamento inspra com um projeto no seu estilo é de :R$${orcamento_comercial}.`
+        }
+
+        if (imovel == "residencial") {
+            div_mensagem.innerHTML += `${nome} o valor do seu orcamento inspra com um projeto no seu estilo é de :R$${orcamento_residencial}.`
+
+
+        }
+
+
+    }
+</script>

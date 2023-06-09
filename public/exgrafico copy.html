@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="grafico.css">
+    <title>Document</title>
+</head>
+
+<body>
+  <style>
+    #grafico_design{
+    margin-top: 77px;
+  left: 408px;
+  position: absolute;
+  }
+  </style>
+
+  <div class="navbar" id="inicio">
+    <a href="./index.html"><img class="logoinspra"  src="./img/Logo.png"></a>
+    <ul class="atalhos">
+    </ul>
+    <a href="./paginas/pesquisa.html"><img id="voltar" src="./img/voltar.png" alt=""></a>
+
+    <div id="footer">
+      <img id="logofooter" src="./img/Logo.png" alt="">
+      <div id="direitos">© 2023 todos os direitos são reservados</div>
+    <div id="f"><img id="f1" src="./img/instagram.png" alt="">
+    <img  id="f2" src="./img/linkedin.png" alt="">
+    <img id="f3" src="./img/pinterest.png" alt="">
+    </div>
+    </div>
+  </div>
+
+<h1 id="titulo"> gráfico dos designs </h1>
+    <div style="width: 35%;">
+        <canvas id="grafico_imovel"></canvas>
+      </div>
+
+      <div style="width: 35%;">
+        <canvas id="grafico_design"></canvas>
+      </div>
+</body>
+</html>
+
+<script>
+     // Obtém o elemento canvas
+     const design = document.getElementById('grafico_design');
+    
+    // Cria os dados para o gráfico de pizza
+    const tipo = {
+      labels: ['minimalista','industrial','rustico','romantico','contemporâneo','retró','classico' ],
+      datasets: [{
+        data: [10,10,10,10,10,10,40], // Valores para cada fatia da pizza
+        backgroundColor: ['#F49D92', '#36a2eb','#00305d','#919191','#5b82a8','#b9dbfd','#294560'] // Cores de fundo para cada fatia
+      }]
+    };
+    
+    // Cria o gráfico de pizza
+    const grafico_design = new Chart(design, {
+      type: 'pie',
+      data: tipo,
+    
+      // options:{
+      //   responsive:true,
+      //   legend:{
+      //     position:'bottom'
+      //   }
+      // }
+
+
+      options: {
+       responsive: true,
+       legend:{
+         position:'buttom'
+        },
+    plugins: {
+         subtitle: {
+           display: true,
+          
+           
+         }
+       }
+     }
+   
+    });
+
+
+    
+  </script>
+  

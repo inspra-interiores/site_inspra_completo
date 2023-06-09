@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="pesquisa.css">
+    
+    <title>pesquisa</title>
+</head>
+
+<body>
+    <div class="navbar" id="inicio">
+        <a href="./../index.html"><img class="logoinspra" src="./../img/Logo.png"></a>
+        <a href="./../exgrafico.html"><img class="grafico" src="./../img/grafico.png" alt=""></a>
+        <ul class="atalhos">
+        </ul>
+
+        <a href="./faq.html"><img id="voltar" src="./../img/voltar.png" alt=""></a>
+
+        <h1 id="titulo">pesquisa</h1>
+        <p id="pergunta">selecione o design que você mais se identificou</p>
+        <div id="inputs">
+
+            <p id="pclassico"><input id="classico" name="pesquisa" type="radio" value="clássico">
+                <span style="font-family: 'Alegreya Sans SC'; font-weight: bold"> clássico</span>
+                 <br> <img src="./../img/classica1.png" alt="">
+            </p>
+            <p id="promantico"><input id="romantico" name="pesquisa" type="radio" value="romântico">
+                <span style="font-family: 'Alegreya Sans SC';font-weight: bold">romantico</span> <br><img src="./../img/romantico1.jpg" alt="">
+            </p>
+            <p id="pcontemporaneo"><input id="contemporaneo" name="pesquisa" type="radio" value="contemporâneo">
+                <span style="font-family: 'Alegreya Sans SC';font-weight: bold">contemporâneo</span>
+                <br><img src="./../img/contemporaneo1.jpg" alt="">
+            </p>
+            <p id="pretro"><input id="retro" name="pesquisa" type="radio" value="retrô">
+                <span style="font-family: 'Alegreya Sans SC';font-weight: bold">retrô</span>
+                <br><img src="./../img/retro1.jpg" alt="">
+            </p>
+            <p id="pindustrial"><input id="industrial" name="pesquisa" type="radio" value="industrial">
+                <span style="font-family: 'Alegreya Sans SC';font-weight: bold">industrial</span>
+                    <br><img src="./../img/industrial1.jpg" alt="">
+            </p>
+            <p id="pminimalista"><input id="minimalista" name="pesquisa" type="radio" value="minimalista">
+                <span style="font-family: 'Alegreya Sans SC';font-weight: bold">minimalista</span> <br><img src="./../img/minimalista1.jpg" alt="">
+            </p>
+            <p id="prustico"><input id="rustico" name="pesquisa" type="radio" value="rústico">
+                <span style="font-family: 'Alegreya Sans SC';font-weight: bold">rústico</span>
+                <br><img src="./../img/rustico1.jpg" alt="">
+            </p>
+        </div>
+
+        <button id="enviar" onclick="cadastrar()">enviar</button>
+
+        <div id="footer">
+            <img id="logofooter" src="./../img/Logo.png" alt="">
+            <div id="direitos">© 2023 todos os direitos são reservados</div>
+            <div id="f"><img id="f1" src="./../img/instagram.png" alt="">
+                <img id="f2" src="./../img/linkedin.png" alt="">
+                <img id="f3" src="./../img/pinterest.png" alt="">
+                
+            </div>
+        </div>
+</body>
+</html>
+<script>
+function cadastrar(){
+    var idUsuarioVar = sessionStorage.ID_USUARIO;
+    var designVar = document.querySelector("input[name='pesquisa']:checked").value;
+    sessionStorage.setItem('DESIGN_USUARIO', designVar);
+
+
+    fetch("/pesquisa/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    idUsuarioServer: idUsuarioVar,
+                    designServer: designVar,
+                })
+
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    Swal.fire({
+                icon: 'sucess',
+                title: 'parabéns',
+                text: 'pesquisa respondida com sucesso!',
+                width: '354px',
+                height: '333px',
+                confirmButtonColor:'#47759F'
+            });
+
+                    setTimeout(() => {
+                        window.location = '../exgrafico.html'
+                    },2000)
+
+                } else {
+                    throw ("Houve um erro ao tentar realizar a pequisa!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+}
+
+
+
+
+</script>

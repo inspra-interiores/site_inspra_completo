@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modal com HTML e CSS</title>
+  <style>
+    /* Estilos do modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      width: 60%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    /* Estilos para o botão de abrir o modal */
+    .open-modal-btn {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exemplo de Modal</h1>
+  
+  <!-- Botão para abrir o modal -->
+  <button class="open-modal-btn" onclick="openModal()">Abrir Modal</button>
+  
+  <!-- O modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Conteúdo do Modal</h2>
+      <p>Este é um exemplo de modal simples utilizando HTML e CSS.</p>
+    </div>
+  </div>
+  
+  <script>
+    // Função para abrir o modal
+    function openModal() {
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'block';
+    }
+    
+    // Função para fechar o modal
+    function closeModal() {
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

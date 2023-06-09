@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pagina_projeto.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>tela de projetos</title>
+</head>
+<body>
+    
+    <div class="navbar" id="inicio">
+        <a href="./../index.html"><img class="logoinspra"  src="./../img/Logo.png"></a>
+        <ul class="atalhos">
+          <span> <a href="./faq.html"><img class="designs"  src="./../img/designs.png"></a></span>
+          <span> <a href="./../jogoMemoria.html"><img class="game"  src="./../img/game.png"></a></span>
+
+
+        </ul>
+
+        <a href="./../login.html"><img id="voltar" src="./../img/voltar.png" alt=""></a>
+        
+    </div>
+    <h1 id="titulo">projetos</h1>
+    <div id="icones">
+        <a href="./../paginas/sala/pagina_sala.html"><img id="frame_sala" src="./../img/framesala.png" alt=""></a>
+       <a href="./../paginas/cozinha/pagina_cozinha.html"><img id="frame_cozinha" src="./../img/framecozinha.png" alt=""></a> 
+        <a href="./../paginas/quarto/pagina_quarto.html"><img id="frame_quarto" src="./../img/framequarto.png" alt=""></a>
+        <a href="./../paginas/banheiro/pagina_banheiro.html"><img id="frame_banheiro" src="./../img/framebanheiro.png" alt=""></a>
+        <a href="./../paginas/escritorio/pagina_escritorio.html"><img id="frame_escritorio" src="./../img/frameescritorio.png" alt=""></a>
+        <a href="./../paginas/area_servico/pagina_area_servico.html"><img id="frame_areadeservico" src="./../img/frameareadeservico.png" alt=""></a>
+       <a href="./../paginas/area_externa/pagina_area_externa.html"><img id="frame_areaexterna" src="./../img/frameareaexterna.png" alt=""></a>
+        <a href="./../paginas/entrada/pagina_entrada.html"><img id="frame_entreda" src="./../img/frameentrada.png" alt=""></a>
+
+    
+</div>
+
+<div id="projetos">
+<div id="primeira">  
+</div>
+
+
+<div id="segunda">
+</div>
+</div>
+
+
+
+<div id="footer">
+    <img id="logofooter" src="./../img/Logo.png" alt="">
+    <div id="direitos">© 2023 todos os direitos são reservados</div>
+  <div id="f"><img id="f1" src="./../img/instagram.png" alt="">
+  <img  id="f2" src="./../img/linkedin.png" alt="">
+  <img id="f3" src="./../img/pinterest.png" alt="">
+  <img src="../img/" alt="">
+  </div>
+  </div>
+</body>
+</html>
+<script>
+    if (document.referrer.indexOf("login") > 0) {
+        const Toast = Swal.mixin({
+                                toast: true,
+                                position: 'bottom-start',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                
+                                }
+            
+                            
+                            })
+
+                            Toast.fire({
+                                icon: 'success',
+                                title: `bem vindo(a) ${sessionStorage.NOME_USUARIO}`
+                            })
+    }
+ 
+
+
+    var img = [
+'../img/img_projeto1.png',
+'../img/img_projeto2.png',
+'../img/img_projeto3.png',
+'../img/img_projeto4.png',
+'../img/img_projeto5.png',
+'../img/img_projeto6.png'
+]
+
+for (var contador = 0; contador < 3; contador++) {
+    var imagem_atual = img[contador];
+
+    primeira.innerHTML += `<div id="p${contador}">
+    <div id="div_mensagem"></div>
+    <img src="${imagem_atual}" alt="">
+</div>`
+    
+}
+
+for ( ;contador < 6; contador++) {
+    var imagem_atual = img[contador];
+
+    segunda.innerHTML += `<div id="p${contador}">
+    <div id="div_mensagem"></div>
+    <img src="${imagem_atual}" alt="">
+</div>`
+    
+}
+
+</script>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>tela de login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <main id="container">
+        <div id="login_form">
+        <div id="form_header">
+            <h1>login</h1>
+        </div>
+        <!-- <div id="social_media">
+            <a href=""><img src="../google.png" ></a>
+            <a href=""><img src="../facebook.png" ></a>
+        </div> -->
+    
+        <div id="inputs">
+            <div class="input-box">
+                <label for="nome">
+                        <span id="text_email"> Email</span>
+                    <div class="input-field">
+                        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                        <input type="text" id="input_email" name="nome">
+                    </div>
+                </label>
+                <div class="input-box">
+                    <label for="senha">
+                             <span id="text_senha"> Senha</span>
+                        <div class="input-field">
+                            <i class="fa-solid fa-key" style="color: #ffffff;"></i>
+                            <input type="password" id="input_senha" name="senha">
+                        </div>
+                    </label>
+                </div>
+       
+                <div id="forgot_password">
+                    <a href="cadastro.html">
+                        cadastre-se
+                    </a>
+                </div>
+            </div>
+        </div>
+            
+        <button type="submit" id="login_button" onclick="entrar()">entrar</button>
+       <div id="div_mensagem"></div>
+    </div>
+    <div id="deslogar"><a href="./index.html"><img src="./img/sair.png" alt=""></a></div>
+    </main>
+  </div>
+</div> 
+</body>
+</html>
+
+<script>
+function entrar(){
+var emailVar = input_email.value
+var senhaVar = input_senha.value
+
+if (emailVar == "" || senhaVar == "") {
+           // alert('❌ERRO há campos em branco');
+           Swal.fire({
+                icon: 'error',
+                title: 'ERRO',
+                text: 'há campos em branco',
+                width: '354px',
+                height: '333px',
+                confirmButtonColor:'#47759F'
+            });
+
+        }
+
+fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.ID_USUARIO = json.idusuario;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.SOBRENOME_USUARIO = json.sobrenome;
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.SENHA_USUARIO = json.senha;
+                   
+
+                    setTimeout(function () {
+                        window.location = "./paginas/pagina_projeto.html";
+                    }, 1000); // apenas para exibir o loading
+                    
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>

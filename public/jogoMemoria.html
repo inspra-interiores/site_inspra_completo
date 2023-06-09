@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jogoMemoria.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>jogo da memória</title>
+</head>
+
+<body onload="criargrade()">
+    <div class="navbar" id="inicio">
+        <a href="./index.html"><img class="logoinspra" src="./img/Logo.png"></a>
+        <ul class="atalhos">
+        </ul>
+        <a href="./paginas/pagina_projeto.html"><img id="voltar" src="./img/voltar.png" alt=""></a>
+
+
+
+        <h1>Jogo da memória </h1>
+        <p>pontos: <span id="pontos"></span></p>
+
+        <div id="grade"></div>
+
+        <div id="footer">
+            <img id="logofooter" src="./img/Logo.png" alt="">
+            <div id="direitos">© 2023 todos os direitos são reservados</div>
+            <div id="f"><img id="f1" src="./img/instagram.png" alt="">
+                <img id="f2" src="./img/linkedin.png" alt="">
+                <img id="f3" src="./img/pinterest.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var baralho = [
+        {
+            nome: "sala",
+            img: "./img/sala1.png"
+        },
+
+        {
+            nome: "cozinha",
+            img: "./img/cozinha2.png"
+        },
+
+        {
+            nome: "quarto",
+            img: "./img/quarto1.png"
+        },
+
+        {
+            nome: "banheiro",
+            img: "./img/banheiro7.png"
+        },
+
+        {
+            nome: "escritorio",
+            img: "./img/escritorio3.png"
+        },
+
+        {
+            nome: "entrada",
+            img: "./img/entrada11.png"
+        },
+
+        {
+            nome: "banheiro",
+            img: "./img/banheiro7.png"
+        },
+
+        {
+            nome: "entrada",
+            img: "./img/entrada11.png"
+        },
+
+
+        {
+            nome: "quarto",
+            img: "./img/quarto1.png"
+        },
+
+        {
+            nome: "sala",
+            img: "./img/sala1.png"
+        },
+
+        {
+            nome: "cozinha",
+            img: "./img/cozinha2.png"
+        },
+
+        {
+            nome: "escritorio",
+            img: "./img/escritorio3.png"
+        }
+    ];
+
+    var grade = document.querySelector("#grade");
+    var pontuacao = document.querySelector("#pontos");
+    var ponto;
+    var escolhidas = [];
+    ponto = 0;
+
+    function embaralhar(){
+        var cartasEmbaralhadas = [];
+        var qtdItens = baralho.length
+        
+        for (var contador = 0; contador < qtdItens; contador++) {
+            var numeroAleatorio = parseInt(Math.random() * baralho.length);
+            var carta = baralho[numeroAleatorio];
+            baralho.splice(numeroAleatorio,1)
+            cartasEmbaralhadas.push(carta);
+        }
+
+        return cartasEmbaralhadas;
+    }
+
+    function criargrade() {
+        pontuacao.innerText = ponto;
+        baralho = embaralhar();
+
+        for (var contador = 0; contador < baralho.length; contador++) {
+            var carta = document.createElement("img");
+            carta.id = contador;
+            carta.name = baralho[contador].nome;
+            carta.src = "./img/card.png";
+            carta.addEventListener("click", escolherCarta);
+            grade.appendChild(carta);
+        }
+    }
+
+    function escolherCarta() {
+        var carta = this;
+        carta.src = baralho[carta.id].img
+        escolhidas.push(carta);
+
+        if (escolhidas.length == 2) {
+            setTimeout(() => {
+                var carta1 = escolhidas[0];
+                var carta2 = escolhidas[1];
+
+                if (carta1.name == carta2.name) {
+                    carta1.src = "./img/branco.png";
+                    carta2.src = "./img/branco.png";
+                    carta1.removeEventListener("click",
+                        escolherCarta);
+                    carta2.removeEventListener("click",
+                        escolherCarta);
+                    ponto++
+                    pontuacao.innerText = ponto;
+
+                } else {
+                    carta1.src = "./img/card.png";
+                    carta2.src = "./img/card.png";
+                }
+
+                if (ponto == baralho.length / 2) {
+                    // alert('👏 Muito bom! você achou todos os pares.')
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'PARABÉNS',
+                        text: 'você achou todos os pares.',
+                        width: '354px',
+                        height: '333px',
+                        confirmButtonColor: '#47759F'
+                    });
+
+                }
+
+                escolhidas = [];
+            }, 1000);
+
+        }
+    }
+
+</script>
+
+<!-- var baralho = [
+    {nome:"sala", img: "./img/sala1.png"},
+    {nome:"cozinha", img: "./img/cozinha2.png"},
+    {nome:"quarto", img: "./img/quarto1.png"},
+    {nome:"banheiro", img: "./img/banheiro7.png"},
+    {nome:"escritorio", img: "./img/escritorio3.png"},
+    {nome:"entrada", img: "./img/entrada11.png"},
+    {nome:"banheiro", img: "./img/banheiro7.png"},
+    {nome:"entrada", img: "./img/entrada11.png"},
+    {nome:"quarto", img: "./img/quarto1.png"},
+    {nome:"sala", img: "./img/sala1.png"},
+    {nome:"cozinha", img: "./img/cozinha2.png"},
+    {nome:"escritorio", img: "./img/escritorio3.png"}
+];
+
+function shuffle(array) {
+    for (var currentIndex = array.length - 1; currentIndex > 0; currentIndex--) {
+        var randomIndex = Math.floor(Math.random() * (currentIndex + 1));
+        var temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
+}
+
+// Embaralha o baralho
+baralho = shuffle(baralho);
+
+// Restante do código... -->

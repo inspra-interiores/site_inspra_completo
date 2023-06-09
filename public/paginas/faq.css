@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&family=Comfortaa:wght@300&display=swap');
+
+body {
+    overflow-x: hidden;
+    scroll-behavior: auto;
+    scroll-behavior: smooth;
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#voltar{
+  width: 54px;
+  position: absolute;
+  margin-top: 109px;
+  left: 80px;
+}
+
+.navbar {
+    margin: 0%;
+    margin-top: 0%;
+    display: flex;
+    height: 85px;
+    width: 1920px;
+    position: absolute;
+    background: #47759F;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  
+  .logoinspra {
+    position: static;
+    width: 420px;
+    height: 72px;
+    left: 35px;
+    top: 23px;
+  
+  }
+  
+  .atalhos {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    list-style: none;
+    font-weight: bold;
+  
+    padding: 0;
+    gap: 35px;
+  
+  }
+
+  .lupa{
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 1166px;
+    top: 2px;
+  }
+ 
+
+  #titulo{
+    font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'Comfortaa', cursive;
+  font-size: 55px;
+  margin-top: 112px;
+    position: absolute;
+    left: 329px;
+  }
+
+
+  #atalho_classico{
+    width: 92px;
+    height: 138px;
+  }
+
+  #atalho_romantico{
+    width: 106px;
+    height: 142px;
+  }
+
+  #atalho_contemporaneo {
+    width: 159px;
+    height: 145px;
+  }
+
+  #atalho_retro{
+    width: 95px;
+    height: 150px;
+  }
+
+  #atalho_industrial{
+    width: 105px;
+    height: 150px;
+  }
+
+  #atalho_minimalista{
+    width: 119px;
+    height: 153px;
+  }
+
+  #atalho_rustico{
+    width: 100px;
+  }
+
+
+#icones {
+      left: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  list-style: none;
+  position: absolute;
+  margin-top: 207px;
+  gap: 60px;
+  }
+
+a #atalho_contemporaneo{
+    width: 154px;
+    display: flex;
+  }
+
+  #classico{
+    display: flex;
+    margin-top: 402px;
+    position: absolute;
+    left: 0;
+}
+  
+#titleclassico{
+  font-family: 'Comfortaa', cursive;
+  font-size: 50px;
+  margin-top: 51px;
+  margin-left: 52px;
+}
+
+#textclassico{
+  margin-top: 134px;
+  display: flex;
+  margin-left: -228px;
+  font-family: 'Alegreya Sans SC';
+  font-weight: bold;
+  font-size: 17px;
+  width: 664px;
+}
+
+#classica2{
+  width: 271px;
+  margin-top: 53px;
+  height: 241px;
+  margin-left: -44px;
+}
+
+#classica3{
+  width: 264px;
+  margin-top: 55px;
+  height: 241px;
+  margin-left: 9px;
+}
+
+#titleromantico{
+  font-family: 'Comfortaa', cursive;
+  font-size: 50px;
+  margin-left: 361px;
+  margin-top: 753px;
+}
+
+#textromantico{
+  margin-top: 0px;
+  display: flex;
+  margin-left: 267px;
+  font-family: 'Alegreya Sans SC';
+  font-weight: bold;
+  font-size: 17px;
+  width: 475px;
+}
+
+#romantico1{
+  width: 271px;
+  margin-top: -166px;
+  height: 241px;
+  margin-left: -367px;
+}
+
+#romantico2{
+  width: 264px;
+  margin-top: -167px;
+  height: 241px;
+  margin-left: 9px;
+}
+
+#titlecontemporaneo{
+  font-family: 'Comfortaa', cursive;
+    font-size: 50px;
+    margin-left: -306px;
+    margin-top: 37px;
+}
+
+#textcontemporaneo{
+  margin-top: -5px;
+    display: flex;
+    margin-left: -425px;
+    font-family: 'Alegreya Sans SC';
+    font-weight: bold;
+    font-size: 17px;
+    width: 600px;
+}
+
+#contemporaneo1{
+  width: 271px;
+    margin-top: -143px;
+    height: 241px;
+    margin-left: 204px;
+}
+
+#contemporaneo2{
+  width: 271px;
+  margin-top: -143px;
+  height: 241px;
+  margin-left: 8px;
+}
+
+#titleretro{
+  font-family: 'Comfortaa', cursive;
+    font-size: 50px;
+    margin-left: 417px;
+    margin-top: 34px;
+}
+
+#textretro{
+  margin-top: -5px;
+  display: flex;
+  margin-left: 275px;
+  font-family: 'Alegreya Sans SC';
+  font-weight: bold;
+  font-size: 17px;
+  width: 479px;
+}
+
+#retro1{
+  width: 271px;
+  margin-top: -181px;
+  height: 241px;
+  margin-left: -386px;
+}
+
+#retro2{
+  width: 271px;
+  margin-top: -181px;
+  height: 241px;
+  margin-left: 9px;
+}
+
+#titleindustrial{
+  font-family: 'Comfortaa', cursive;
+    font-size: 50px;
+    margin-left: -259px;
+    position: absolute;
+    margin-top: 49px;
+}
+
+#textindustrial{
+  margin-top: 108px;
+  display: flex;
+  margin-left: -409px;
+  font-family: 'Alegreya Sans SC';
+  font-weight: bold;
+  font-size: 17px;
+  width: 484px;
+}
+
+#industrial1{
+  width: 271px;
+  margin-top: -201px;
+  height: 241px;
+  margin-left: 50px;
+}
+
+#industrial2{
+  width: 271px;
+  margin-top: -200px;
+  height: 241px;
+  margin-left: 10px;
+}
+
+#imgindustrial{
+  left: 620px;
+    position: absolute;
+}
+
+
+#titleminimalista{
+  font-family: 'Comfortaa', cursive;
+    font-size: 50px;
+    margin-left: 315px;
+    margin-top: 87px;
+}
+
+#textminimalista{
+  margin-top: -7px;
+  display: flex;
+  margin-left: 252px;
+  font-family: 'Alegreya Sans SC';
+  font-weight: bold;
+  font-size: 17px;
+  width: 484px;
+  
+}
+
+#minimalista1{
+  width: 271px;
+    margin-top: -201px;
+    height: 241px;
+    margin-left: 38px;
+}
+
+#minimalista2{
+  width: 271px;
+    margin-top: -228px;
+    height: 241px;
+    margin-left: 11px;
+}
+
+#imgminimalista{
+  left: 13px;
+  position: absolute;
+  margin-top: 76px;
+}
+
+#titlerustico{
+  font-family: 'Comfortaa', cursive;
+    font-size: 50px;
+    margin-left: -272px;
+    margin-top: 146px;
+}
+
+#textrustico{
+  margin-top: -11px;
+  position: relative;
+  display: flex;
+  margin-left: -403px;
+  font-family: 'Alegreya Sans SC';
+  font-weight: bold;
+  font-size: 17px;
+  width: 484px;
+}
+
+#rustico1{
+  width: 271px;
+  margin-top: -229px;
+  height: 241px;
+  margin-left: 46px;
+}
+
+#rustico2{
+  width: 271px;
+  margin-top: -229px;
+  height: 241px;
+  margin-left: 11px;
+}
+
+#imgrustico{
+  left: 607px;
+  position: absolute;
+  margin-top: 50px;
+}
+
+
+#btnpesquisa{
+  text-decoration: none;
+    margin-top: 2514px;
+    left: 536px;
+    position: absolute;
+    background: #47759F;
+    border-radius: 5px;
+    padding: 12px;
+    font-family: 'Alegreya Sans SC';
+    color: black;
+    width: 120px;
+    text-align: center;
+    height: 26px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+  #footer{
+    position: absolute;
+    width: 1390px;
+    height: 95px;
+    left: -103px;
+    background: #47759F;
+    margin-top: 2625px;
+
+  }
+  
+  #logofooter{
+    position: absolute;
+    left: 126px;
+    width: 422px;
+    margin-top: 10px;
+  }
+  
+  #direitos{
+    font-size: 20px;
+    margin-top: 36px;
+    position: absolute;
+    left: 601px;
+  }
+  
+  #f{
+    display: flex;
+    position: absolute;
+    margin-top: 28px;
+    left: 1165px;
+    gap: 14px;
+  }
+  
+  #f1{
+    width: 35px;
+  }
+  
+  #f2{
+    width: 35px;
+  }
+  
+  #f3{
+    width: 35px;
+    
+  }

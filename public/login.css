@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&family=Comfortaa:wght@300&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+    /* background:  rgba(0, 0, 0, 0.9);; */
+}
+
+h1{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Comfortaa', cursive;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+
+#container{
+    height: 100vh;
+    width: 100%;
+    background:  rgb(218 218 218 / 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login_form{
+    background: #47759F;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 50px;
+    border-radius: 30px;
+    gap: 10px;
+    box-shadow: 5px 5px 8px rgba(0,0,0,0.336);
+    position: absolute;
+    left: 435px;
+}
+
+
+#inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 50px;
+   
+}
+
+#inputs input{
+    width: 270px;
+    height: 30px;
+    padding: 1px 5px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 30px
+
+}
+
+#inputs label{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+}
+
+#forgot_password a{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    display: flex;
+   text-align: center;
+   justify-content: center;
+}
+
+#forgot_password a:hover {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#login_button{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Comfortaa', cursive;
+    border: none;
+    background: black;
+    color: white;
+    padding: 14px;
+    width: 170px;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+      right: -60px;
+    position: relative;
+}
+
+#login_button a{
+    text-decoration: none;
+    color: white;
+}
+
+#deslogar img{
+    width: 30px;
+    left: 30px;
+}
+
+#deslogar{
+    position: absolute;
+    left: 30px;
+    margin-top: 443px;
+}
