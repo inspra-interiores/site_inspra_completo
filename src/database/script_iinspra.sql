@@ -16,6 +16,7 @@ create table orcamento(
 idorcamento int primary key auto_increment,
 nome varchar(45),
 telefone char(11),
+email varchar(45),
 metroQuadrado decimal(7,2),
 tipo_imovel varchar(45), constraint chkorcamento check (tipo_imovel in('comercial','residencial')),
 descricao varchar(300),
