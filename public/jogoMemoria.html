@@ -80,7 +80,6 @@
             img: "./img/entrada11.png"
         },
 
-
         {
             nome: "quarto",
             img: "./img/quarto1.png"
@@ -135,18 +134,25 @@
             grade.appendChild(carta);
         }
     }
-
+    var cartasOO = 0
     function escolherCarta() {
+     
         var carta = this;
         carta.src = baralho[carta.id].img
-        escolhidas.push(carta);
+        carta.removeEventListener(`click`,escolherCarta)
+        console.log(carta)
+        if(escolhidas.length < 2){
+            escolhidas.push(carta);
+        }
 
         if (escolhidas.length == 2) {
+
+            
             setTimeout(() => {
                 var carta1 = escolhidas[0];
                 var carta2 = escolhidas[1];
 
-                if (carta1.name == carta2.name) {
+                if (carta1.name == carta2.name && carta1.id != carta2.id) {
                     carta1.src = "./img/branco.png";
                     carta2.src = "./img/branco.png";
                     carta1.removeEventListener("click",
@@ -159,10 +165,11 @@
                 } else {
                     carta1.src = "./img/card.png";
                     carta2.src = "./img/card.png";
+                    carta1.addEventListener('click',escolherCarta)
+                    carta2.addEventListener('click',escolherCarta)
                 }
 
                 if (ponto == baralho.length / 2) {
-                    // alert('👏 Muito bom! você achou todos os pares.')
                     Swal.fire({
                         icon: 'success',
                         title: 'PARABÉNS',
@@ -173,9 +180,11 @@
                     });
 
                 }
-
-                escolhidas = [];
-            }, 1000);
+                    if(escolhidas.length == 2){
+                            
+                    }
+                    escolhidas = [];
+            }, 500);
 
         }
     }
@@ -197,17 +206,3 @@
     {nome:"escritorio", img: "./img/escritorio3.png"}
 ];
 
-function shuffle(array) {
-    for (var currentIndex = array.length - 1; currentIndex > 0; currentIndex--) {
-        var randomIndex = Math.floor(Math.random() * (currentIndex + 1));
-        var temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-    return array;
-}
-
-// Embaralha o baralho
-baralho = shuffle(baralho);
-
-// Restante do código... -->

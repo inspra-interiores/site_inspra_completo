@@ -143,7 +143,7 @@
         <div> <span>TELEFONE</span> <input placeholder="somente numeros"  class="telefone" id="input_telefone"
             type="text" maxlength="11"></div>
         <!-- input email -->
-        <div><span> EMAIL</span><input maxlength="45" placeholder="digite seu email" id="input_email"></div>
+        <div><span> EMAIL</span><input maxlength="45" placeholder="digite seu email" id="input_email_orcar"></div>
       </div>
 
       <div class="div2">
@@ -168,7 +168,7 @@
         <div><span>QUANDO DESEJA COMECAR O PROJETO</span><input class="datainicio" type="date" maxlength="8"
             id="input_data"></div>
       </div>
-      <button class="btsimular" onclick="simular()"><span class="simular">SIMULAR</span></button>
+      <button class="btsimular" onclick="orcar()"><span class="simular">SIMULAR</span></button>
 
 
     </div>
@@ -293,37 +293,51 @@
       <img id="f3" src="./img/pinterest.png" alt="">
     </div>
 
-   
 </body>
 
 </html>
 <script>
  
 
-  function simular() {
-    var nome = input_nome_orcar.value
-    var telefone = Number(input_telefone.value)
-    var email = input_email.value
-    var metros = Number(input_metro.value)
-    var descricao = input_descricao.value
-    var data = input_data.value
-    var orcamento_residencial = metros * 20
-    var orcamento_comercial = metros * 40
-    var imovel = tipoimovel.value
+  function orcar() {
+    var nomeVar = input_nome_orcar.value
+    var telefoneVar = Number(input_telefone.value)
+    var emailVar = input_email_orcar.value
+    var metrosVar = Number(input_metro.value)
+    var descricaoVar = input_descricao.value
+    var dataVar = input_data.value
+    var selectVar = tipoimovel.value
+       
+    if (selectVar == "residencial") {
+      var residencial = metrosVar * 20
+    }else if (selectVar == "comercial") {
+      var comercial = metrosVar * 40
+    }
+   
     div_texto.innerHTML = ""
     card_orcamento.style.display = "none"
     div_mensagem.style.display = "inline"
 
-    if (imovel == "comercial" && metros >= 2000) {
-      var desconto = metros * 40 * 0.1
-      orcamento_comercial_desconto = orcamento_comercial - desconto
-      div_texto.innerHTML = `<p id="if_div">${nome} o valor do seu orcamento inspra com um projeto no seu estilo é de :R$${orcamento_comercial_desconto} com um desconto de 10%.</p>`
-    } else if (imovel == "comercial") {
-      div_texto.innerHTML = `<p id="if_div">${nome} o valor do seu orcamento inspra com um projeto no seu estilo é de :R$${orcamento_comercial}.</p>`
-    } else if (imovel == "residencial") {
-      div_texto.innerHTML = `<p id="if_div">${nome} o valor do seu orcamento inspra com um projeto no seu estilo é de :R$${orcamento_residencial}.`
+    if (selectVar == "comercial" && metrosVar >= 2000) {
+      var desconto = metrosVar * 40 * 0.1
+      desconto = comercial - desconto
+      div_texto.innerHTML = `<p id="if_div">${nomeVar}, o valor do seu orcamento inspra com um projeto no seu estilo é de : r$${comercial}<br> mas foi aplicado um desconto de 10% ficando r$:${desconto}.</p>`
+    } else if (selectVar == "comercial") {
+      div_texto.innerHTML = `<p id="if_div">${nomeVar}, o valor do seu orcamento inspra com um projeto no seu estilo é de : r$${comercial}.</p>`
+    } else if (selectVar == "residencial") {
+      div_texto.innerHTML = `<p id="if_div">${nomeVar}, o valor do seu orcamento inspra com um projeto no seu estilo é de : r$${residencial}.`
     }
 
+    if (nomeVar == "" || telefoneVar  == ""|| emailVar == "" || metrosVar == "" || descricaoVar == "" || dataVar == "" || selectVar == "") {
+           Swal.fire({
+                icon: 'error',
+                title: 'ERRO',
+                text: 'há campos em branco',
+                width: '354px',
+                height: '333px',
+                confirmButtonColor:'#47759F'
+            });
+        }
 
     fetch("/usuarios/orcar", {
                 method: "POST",
@@ -332,9 +346,12 @@
                 },
                 body: JSON.stringify({
                     nomeServer: nomeVar,
-                    sobrenomeServer: sobrenomeVar,
+                    telefoneServer:telefoneVar,
                     emailServer: emailVar,
-                    senhaServer: senhaVar
+                    metrosServer:metrosVar,
+                    descricaoServer:descricaoVar,
+                    dataServer:dataVar,
+                    selectServer:selectVar
                 })
 
             }).then(function (resposta) {
@@ -342,6 +359,7 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
+                  
                     const Toast = Swal.mixin({
                                 toast: true,
                                 position: 'bottom-start',
@@ -353,13 +371,6 @@
                                     toast.addEventListener('mouseleave', Swal.resumeTimer)
                                 }
                             })
-
-                            Toast.fire({
-                                icon: 'success',
-                                title: `Cadastro realizado com sucesso! Redirecionando para tela de Login...`
-                            })
-                    
-                    window.location = 'login.html'
                    
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -367,10 +378,8 @@
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-        }
-    }
+          }
     
-  }
 
 
 

@@ -25,7 +25,7 @@ router.post("/enviar", function (req, res) {
 });
 
 router.post("/orcar", function (req, res) {
-    usuarioController.enviar(req, res);
+    usuarioController.orcar(req, res);
 });
 
 module.exports = router;

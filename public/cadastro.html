@@ -100,6 +100,17 @@
         else {
             //alert('✅SUCESSO seu cadastro foi realizado.')
             // Enviando o valor da nova input
+            Swal.fire({
+                icon: 'sucess',
+                title: 'sucesso',
+                text: 'seu cadastro foi realizado.',
+                width: '354px',
+                height: '333px',
+                confirmButtonColor:'#47759F'
+            });
+
+            // requisicao do front pro  back
+            // faz a requisicao para a rota(routes)
             fetch("/usuarios/cadastrar", {
                 method: "POST",
                 headers: {
@@ -123,7 +134,7 @@
                                 toast: true,
                                 position: 'bottom-start',
                                 showConfirmButton: false,
-                                timer: 3000,
+                                timer: 5000,
                                 timerProgressBar: true,
                                 didOpen: (toast) => {
                                     toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -131,12 +142,16 @@
                                 }
                             })
 
-                            Toast.fire({
-                                icon: 'success',
-                                title: `Cadastro realizado com sucesso! Redirecionando para tela de Login...`
-                            })
+                            // Toast.fire({
+                            //     icon: 'success',
+                            //     title: `Cadastro realizado com sucesso! Redirecionando para tela de Login...`
+                            // })
+
+                            setTimeout(function () {
+                        window.location = "login.html";
+                    }, 2000);
                     
-                    window.location = 'login.html'
+                    // window.location = 'login.html'
                    
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
