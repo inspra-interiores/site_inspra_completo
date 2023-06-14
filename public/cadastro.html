@@ -96,10 +96,26 @@
                 height: '333px',
                 confirmButtonColor:'#47759F'
             });
-        }
+        } else if (emailVar.indexOf("gmail") == -1 || emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'email inválido',
+                width: '354px',
+                height: '333px',
+                confirmButtonColor:'#47759F'
+            });
+        } else if (nomeVar.length > 45) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '"O nome cadastrado é muito grande. Por favor, insira um nome válido',
+                width: '354px',
+                height: '333px',
+                confirmButtonColor:'#47759F'
+            });
+    }
         else {
-            //alert('✅SUCESSO seu cadastro foi realizado.')
-            // Enviando o valor da nova input
             Swal.fire({
                 icon: 'sucess',
                 title: 'sucesso',
@@ -109,7 +125,7 @@
                 confirmButtonColor:'#47759F'
             });
 
-            // requisicao do front pro  back
+            // requisicao do front-end para o back-end
             // faz a requisicao para a rota(routes)
             fetch("/usuarios/cadastrar", {
                 method: "POST",

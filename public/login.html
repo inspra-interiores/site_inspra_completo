@@ -73,6 +73,15 @@ if (emailVar == "" || senhaVar == "") {
                 confirmButtonColor:'#47759F'
             });
 
+        }else if(emailVar != emailVar){
+            Swal.fire({
+                icon: 'error',
+                title: 'ERRO',
+                text: 'há campos em branco',
+                width: '354px',
+                height: '333px',
+                confirmButtonColor:'#47759F'
+            });
         }
 
 fetch("/usuarios/autenticar", {

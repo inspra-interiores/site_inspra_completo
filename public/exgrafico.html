@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <h1 id="titulo"> dashboard </h1>
+    <h1 id="titulo"> Dashboard </h1>
     <div style="width: 35%; ">
         <canvas id="grafico_design" style="  
         box-sizing: border-box;
@@ -70,12 +70,12 @@
                         qtdvoto += voto.voto
                         div_mensagem.innerHTML = ` você votou no:<br><b>${sessionStorage.DESIGN_USUARIO}</b>`
                         
-                        div_mensagem1.innerHTML = `total de votos: <br><b>${qtdvoto}</b>`
+                        div_mensagem1.innerHTML = `Total de votos: <br><b>${qtdvoto}</b>`
                     });
                     for (let i = 0; i < resposta.length; i++) {
                         const resposta_atual = resposta[i];
                         var porcentagem = resposta_atual.voto / qtdvoto * 100
-                        div.innerHTML += `<div id="div_mensagem2"> design: ${resposta_atual.design}<br>
+                        div.innerHTML += `<div id="div_mensagem2"> Design: ${resposta_atual.design}<br>
                         voto: ${porcentagem.toFixed(2)}%<br></div>`
                         
                     }
