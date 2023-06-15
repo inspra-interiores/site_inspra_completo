@@ -321,11 +321,11 @@
     if (selectVar == "comercial" && metrosVar >= 2000) {
       var desconto = metrosVar * 40 * 0.1
       desconto = comercial - desconto
-      div_texto.innerHTML = `<p id="if_div">${nomeVar}, o valor do seu orcamento inspra com um projeto no seu estilo é de : r$${comercial}<br> mas foi aplicado um desconto de 10% ficando r$:${desconto}.</p>`
+      div_texto.innerHTML = `<p id="if_div">${nomeVar}, o valor do seu orcamento inspra com um projeto no seu estilo é de : r$${comercial} reais<br> mas foi aplicado um desconto de 10% ficando r$:${desconto} reais.</p>`
     } else if (selectVar == "comercial") {
-      div_texto.innerHTML = `<p id="if_div">${nomeVar}, o valor do seu orcamento inspra com um projeto no seu estilo é de : r$${comercial}.</p>`
+      div_texto.innerHTML = `<p id="if_div">${nomeVar}, o valor do seu orcamento inspra com um projeto no seu estilo é de : r$${comercial} reais.</p>`
     } else if (selectVar == "residencial") {
-      div_texto.innerHTML = `<p id="if_div">${nomeVar}, o valor do seu orcamento inspra com um projeto no seu estilo é de : r$${residencial}.`
+      div_texto.innerHTML = `<p id="if_div">${nomeVar}, o valor do seu orcamento inspra com um projeto no seu estilo é de : r$${residencial} reais.`
     }
 
     if (nomeVar == "" || telefoneVar  == ""|| emailVar == "" || metrosVar == "" || descricaoVar == "" || dataVar == "" || selectVar == "") {
