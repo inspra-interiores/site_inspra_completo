@@ -180,12 +180,14 @@
                     pontuacao.innerText = ponto;
 
                 } else {
+                    // se n volta para a imagem de azul ecleziastico com o logo inspra a
                     carta1.src = "./img/card.png";
                     carta2.src = "./img/card.png";
                     carta1.addEventListener('click',escolherCarta)
                     carta2.addEventListener('click',escolherCarta)
                 }
 
+                // se o ponto for a largura do baralho dividico por 2 q é 6 aparece um alert de parabens
                 if (ponto == baralho.length / 2) {
                     Swal.fire({
                         icon: 'success',
