@@ -37,7 +37,7 @@
 
 </html>
 <script>
-    // vetor
+    // vetor q constitui as imagens
     var baralho = [
         {
             nome: "sala",
@@ -100,19 +100,25 @@
         }
     ];
 
+// pega a div 
     var grade = document.querySelector("#grade");
     var pontuacao = document.querySelector("#pontos");
     var ponto;
     var escolhidas = [];
     ponto = 0;
 
+    // funcao anonima que criar um vetor e roda ele atraves de uma estrutura de repeticao 
     function embaralhar(){
         var cartasEmbaralhadas = [];
+        // quantidade de imagens q contem no baralho 
         var qtdItens = baralho.length
         
+
         for (var contador = 0; contador < qtdItens; contador++) {
+            // deixa aleatroio
             var numeroAleatorio = parseInt(Math.random() * baralho.length);
             var carta = baralho[numeroAleatorio];
+            // a cada baralho vai deixando aleatorio 
             baralho.splice(numeroAleatorio,1)
             cartasEmbaralhadas.push(carta);
         }
@@ -120,15 +126,21 @@
         return cartasEmbaralhadas;
     }
 
+    // exibe as cartas na tela
     function criargrade() {
         pontuacao.innerText = ponto;
         baralho = embaralhar();
 
+    // estruura de repeticao
         for (var contador = 0; contador < baralho.length; contador++) {
+            // pega a imagem do vetor q é a (img)
             var carta = document.createElement("img");
+            // e pega o id dela q é unico
             carta.id = contador;
             carta.name = baralho[contador].nome;
+            // colocar a imagem com azul equeziastico da inspra em cima das cartad
             carta.src = "./img/card.png";
+            // e ao clicar em cima dela aparece a carta q é o design
             carta.addEventListener("click", escolherCarta);
             grade.appendChild(carta);
         }
@@ -138,22 +150,28 @@
      
         var carta = this;
         carta.src = baralho[carta.id].img
+        // ao clicar remove a imagem da funcao escolher arta  
         carta.removeEventListener(`click`,escolherCarta)
         console.log(carta)
+        // se a escolhida q é um vetor for menor q 2 da um push(empura) essa cata pro escolhida
         if(escolhidas.length < 2){
             escolhidas.push(carta);
         }
 
+        // se carta foi igaul a 2
         if (escolhidas.length == 2) {
 
             
             setTimeout(() => {
+                // pega a carta 1 e 2
                 var carta1 = escolhidas[0];
                 var carta2 = escolhidas[1];
 
+                // e e adicona uma imagem branca/ troca o design por uma imagem branca 
                 if (carta1.name == carta2.name && carta1.id != carta2.id) {
                     carta1.src = "./img/branco.png";
                     carta2.src = "./img/branco.png";
+                    // remove da lista
                     carta1.removeEventListener("click",
                         escolherCarta);
                     carta2.removeEventListener("click",
